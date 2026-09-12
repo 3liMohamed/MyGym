@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('avatar')->index();
+            $table->string('avatar')->default('avatars/default.png');
             $table->string('name')->index();
             $table->string('email')->unique();
+            $table->string('phone', 15)->default('#');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('is_active')->default(false);
+            $table->json('permissions')->nullable();
             $table->rememberToken();
             $table->softDeletes();
         });
@@ -27,7 +30,6 @@ return new class extends Migration
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });
-
     }
 
     /**

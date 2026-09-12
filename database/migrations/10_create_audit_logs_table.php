@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('audit_logs', function (Blueprint $table) {
             $table->id();
-            $table->id();
             $table->bigInteger('user_id')->nullable();
             $table->unsignedTinyInteger('action')->index();
             $table->morphs('subject');

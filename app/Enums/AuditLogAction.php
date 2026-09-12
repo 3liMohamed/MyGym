@@ -18,10 +18,10 @@ enum AuditLogAction: int implements HasColor, HasIcon, HasLabel
     public function getLabel(): string|Htmlable|null
     {
         return match ($this) {
-            self::Create => __('field.create'),
-            self::Update => __('field.update'),
-            self::Delete => __('field.delete'),
-            self::Restore => __('field.restore'),
+            self::Create => __('system.field.create'),
+            self::Update => __('system.field.update'),
+            self::Delete => __('system.field.delete'),
+            self::Restore => __('system.field.restore'),
         };
     }
 
