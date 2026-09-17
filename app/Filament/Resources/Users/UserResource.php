@@ -43,7 +43,7 @@ class UserResource extends Resource
 
     protected static ?string $model = User::class;
 
-    // protected static string|BackedEnum|null $navigationIcon = Heroicon::UserGroup;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::UserGroup;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -72,7 +72,7 @@ class UserResource extends Resource
                     ->default('avatars/default.png')
                     ->disk('images')
                     ->directory('avatars')
-                    ->maxSize(1024)
+                    ->maxSize(2048)
                     ->columnSpan(12)
                     ->extraAttributes([
                         'style' => 'margin: 0 auto;',

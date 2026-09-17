@@ -27,7 +27,7 @@ class SliderResource extends Resource
     use Translatable;
     protected static ?string $model = Slider::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleGroup;
 
     protected static ?string $recordTitleAttribute = 'title';
 
@@ -39,11 +39,6 @@ class SliderResource extends Resource
     public static function getModelLabel(): string
     {
         return __('system.slider.model');
-    }
-
-    public static function getNavigationGroup(): string
-    {
-        return __('system.content.group');
     }
 
     public static function form(Schema $schema): Schema
@@ -111,6 +106,8 @@ class SliderResource extends Resource
             ->columns([
                 ImageColumn::make('image')
                     ->disk('images')
+                    ->imageHeight(100)
+                    ->imageWidth(100)
                     ->label(__('system.field.image')),
 
                 TextColumn::make('title')

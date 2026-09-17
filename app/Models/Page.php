@@ -31,7 +31,7 @@ class Page extends Model
         ];
     }
 
-    public $translatable = [
+    public array $translatable = [
         'title',
         'meta_keywords',
         'meta_description',
@@ -47,7 +47,7 @@ class Page extends Model
         });
         static::deleted(fn(self $page) => app(PageService::class)->flush($page->name));
     }
-    public function getImageUrlAttribute()
+    public function getImageUrlAttribute(): ?string
     {
         return asset("images/{$this->image}");
     }

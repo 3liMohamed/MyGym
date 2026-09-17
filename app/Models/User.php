@@ -78,6 +78,10 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
                 'view' => true,
                 'edit' => true,
             ],
+            'website_galleries' => [
+                'view' => true,
+                'edit' => true,
+            ],
             'users' => [
                 'view' => true,
                 'create' => true,
@@ -88,6 +92,57 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
                 'permission' => true,
             ],
             'sliders' => [
+                'view' => true,
+                'create' => true,
+                'edit' => true,
+                'delete' => true,
+            ],
+            'abouts' => [
+                'view' => true,
+                'create' => true,
+                'edit' => true,
+                'delete' => true,
+                'activate' => true,
+            ],
+            'marquee_items' => [
+                'view' => true,
+                'create' => true,
+                'edit' => true,
+                'delete' => true,
+            ],
+            'gym_classes' => [
+                'view' => true,
+                'create' => true,
+                'edit' => true,
+                'delete' => true,
+            ],
+            'cta_sections' => [
+                'view' => true,
+                'create' => true,
+                'edit' => true,
+                'delete' => true,
+                'activate' => true,
+            ],
+            'pricing_plans' => [
+                'view' => true,
+                'create' => true,
+                'edit' => true,
+                'delete' => true,
+            ],
+            'marketing_items' => [
+                'view' => true,
+                'create' => true,
+                'edit' => true,
+                'delete' => true,
+            ],
+            'choose_us' => [
+                'view' => true,
+                'create' => true,
+                'edit' => true,
+                'delete' => true,
+                'activate' => true,
+            ],
+            'posts' => [
                 'view' => true,
                 'create' => true,
                 'edit' => true,

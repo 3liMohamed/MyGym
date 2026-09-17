@@ -24,7 +24,7 @@ class AuditLogResource extends Resource
 {
     protected static ?string $model = AuditLog::class;
 
-    // protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPresentationChartLine;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPresentationChartLine;
 
     // protected static ?string $recordTitleAttribute = 'action';
 
@@ -95,7 +95,7 @@ class AuditLogResource extends Resource
                 TextColumn::make('action')->badge()->size(TextSize::Large)->label(__('system.field.action')),
                 TextColumn::make('user.name')->placeholder(__('system.field.system'))->label(__('system.field.user')),
 
-                TextColumn::make('subject_type')->formatStateUsing(fn($state): string => __('model.' . str($state)->classBasename()->snake()))->label(__('system.field.subject_type')),
+                TextColumn::make('subject_type')->formatStateUsing(fn($state): string => __('system.model.' . str($state)->classBasename()->snake()))->label(__('system.field.subject_type')),
                 TextColumn::make('subject_id')->label(__('system.field.subject_id')),
 
                 TextColumn::make('date')->since()->dateTimeTooltip()->sortable()->label(__('system.field.date')),
@@ -106,7 +106,7 @@ class AuditLogResource extends Resource
             ->recordActions([
                 ViewAction::make()
                     ->modalWidth(Width::SixExtraLarge)
-                    ->hidden(fn($record) => \in_array($record->action, [AuditLogAction::Create, AuditLogAction::Restore])),
+                    ->hidden(fn($record) => \in_array($record->action, [AuditLogAction::Create])),
             ]);
     }
 

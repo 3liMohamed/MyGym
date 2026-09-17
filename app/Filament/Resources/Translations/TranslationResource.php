@@ -5,16 +5,17 @@ namespace App\Filament\Resources\Translations;
 use App\Filament\Resources\Translations\Pages\ManageTranslations;
 use App\Models\Translation;
 use BackedEnum;
-use Filament\Actions\BulkActionGroup;
+
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
-use Filament\Actions\DeleteBulkAction;
+
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
@@ -26,7 +27,7 @@ class TranslationResource extends Resource
 
     protected static ?string $model = Translation::class;
 
-    protected static ?string $recordTitleAttribute = 'key';
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedLanguage;
 
     public static function getPluralModelLabel(): string
     {
@@ -85,7 +86,6 @@ class TranslationResource extends Resource
                     ->label(__('system.field.key')),
 
                 TextColumn::make('value')
-                    ->searchable()
                     ->limit(80)
                     ->label(__('system.field.value')),
             ])

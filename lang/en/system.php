@@ -4,6 +4,10 @@ return [
     'action' => [
         'permissions' => 'Permissions',
         'save' => 'save',
+        'activate' => 'activate',
+        'deactivate' => 'deactivate',
+        'published' => 'published',
+        'unpublished' => 'unpublished',
     ],
     'field' => [
         'active' => 'Active',
@@ -56,6 +60,29 @@ return [
         'group' => 'group',
         '{$state}' => '{$state}',
         'address' => 'address',
+        'button_label' => 'button_label',
+        'button_url' => 'button_url',
+        'description' => 'description',
+        'heading' => 'heading',
+        'heading_highlight' => 'heading highlight',
+        'paragraph' => 'paragraph',
+        'sub_title' => 'sub_title',
+        'video_url' => 'video_url',
+        'day' => 'day',
+        'end_time' => 'end time',
+        'highlighted' => 'highlighted',
+        'instructor' => 'instructor',
+        'start_time' => 'start time',
+        'text' => 'text',
+        'time' => 'time',
+        'big_title' => 'big title',
+        'items' => 'items',
+        'small_title' => 'small title',
+        'features' => 'features',
+        'period' => 'period',
+        'price' => 'price',
+        'is_highlight' => 'is_highlight',
+        'category' => 'category',
     ],
     'user' => [
         'model' => 'User',
@@ -74,12 +101,62 @@ return [
         'model' => 'Settings',
         'navigation' => 'Settings',
         'title' => 'Settings',
+        'saved' => 'saved',
     ],
     'translation' => [
         'model' => 'Translation',
         'navigation' => 'Translations',
     ],
+    'about' => [
+        'model' => 'About Us',
+        'navigation' => 'About Us',
+    ],
+    'slider' => [
+        'model' => 'Slider',
+        'navigation' => 'Sliders',
+    ],
+    'website_gallery' => [
+        'model' => 'Website Gallery',
+        'navigation' => 'Website Galleries',
+    ],
+    'gym_class' => [
+        'model' => 'Gym Class',
+        'navigation' => 'Gym Classes',
+    ],
+    'marquee' => [
+        'model' => 'Marquee Item',
+        'navigation' => 'Marquee Items',
+    ],
+    'cta' => [
+        'model' => 'CTA Section',
+        'navigation' => 'CTA Section',
+    ],
+    'currency' => [
+        'egp' => 'egp',
+    ],
+    'pricing' => [
+        'max_active_body' => 'max active body',
+        'max_active_title' => 'max active title',
+        'model' => 'Plan',
+        'month' => 'month',
+        'navigation' => 'Plans',
+        'year' => 'year',
+    ],
+    'marketing' => [
+        'model' => 'Marketing',
+        'navigation' => 'Marketing',
+    ],
+    'choose' => [
+        'model' => 'Choose Us',
+        'navigation' => 'Choose Us',
+    ],
     'model' => [
         '' => '',
+    ],
+    'post' => [
+        'max_publish_body' => 'Max Publish Body',
+        'max_publish_title' => 'Max Publish Title',
+        'model' => 'Post',
+        'navigation' => 'Posts',
     ],
 ];

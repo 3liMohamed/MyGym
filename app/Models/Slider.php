@@ -27,7 +27,7 @@ class Slider extends Model
         'is_active' => 'boolean',
     ];
 
-    public array $translatable = [
+    public $translatable = [
         'title',
         'heading',
         'heading_highlight',
@@ -40,7 +40,7 @@ class Slider extends Model
         static::deleted(fn () => app(SliderService::class)->flush());
     }
 
-    public function getImageUrlAttribute()
+    public function getImageUrlAttribute(): ?string
     {
         return asset("images/{$this->image}");
     }

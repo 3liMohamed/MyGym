@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->seedUsers();
-        $this->seedSettings();
+        // $this->seedUsers();
+        // $this->seedSettings();
     }
 
     private function seedUsers(): void
@@ -98,4 +98,6 @@ class DatabaseSeeder extends Seeder
             Models\Setting::create($item);
         }
     }
+
+
 }

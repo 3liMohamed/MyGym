@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sliders', function (Blueprint $table) {
+            $table->id();
             $table->string('image')->default('default.webp');
 
             $table->json('title')->nullable();

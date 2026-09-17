@@ -2,8 +2,7 @@
 
 namespace App\Providers;
 
-use App\Services\SettingService;
-use App\Services\TranslationService;
+use App\Services;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,8 +13,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(SettingService::class);
-        $this->app->singleton(TranslationService::class);
+        $this->app->singleton(Services\SettingService::class);
+        $this->app->singleton(Services\WebsiteGalleryService::class);
+        $this->app->singleton(Services\PageService::class);
+        $this->app->singleton(Services\TranslationService::class);
+        $this->app->singleton(Services\SliderService::class);
+        $this->app->singleton(Services\AboutService::class);
+        $this->app->singleton(Services\MarqueeItemService::class);
+        $this->app->singleton(Services\GymClassService::class);
+        $this->app->singleton(Services\CtaSectionService::class);
+        $this->app->singleton(Services\PricingPlanService::class);
+        $this->app->singleton(Services\MarketingItemService::class);
+        $this->app->singleton(Services\ChooseUsService::class);
+        $this->app->singleton(Services\PostService::class);
     }
 
     /**
@@ -29,23 +39,21 @@ class AppServiceProvider extends ServiceProvider
     private function directives()
     {
         Blade::directive('t', function ($expression) {
-            return "<?php echo app('" . TranslationService::class . "')->get({$expression}); ?>";
+            return "<?php echo app('" . Services\TranslationService::class . "')->get({$expression}); ?>";
         });
-
-
 
         Blade::directive('setting', function ($expression) {
             return "<?php echo app(\App\Services\SettingService::class)->get($expression); ?>";
         });
 
         Blade::if('settingAvailable', function (string $key): bool {
-            $value = app(SettingService::class)->get($key);
+            $value = app(Services\SettingService::class)->get($key);
 
             return $value !== null && $value !== '' && $value !== '#';
         });
 
         Blade::directive('settingAsset', function ($expression) {
-            return "<?php echo asset('images/' . app('" . SettingService::class . "')->get($expression)); ?>";
+            return "<?php echo asset('images/' . app('" . Services\SettingService::class . "')->get($expression)); ?>";
         });
 
         Blade::directive('asset', function ($expression) {
@@ -54,6 +62,18 @@ class AppServiceProvider extends ServiceProvider
 
         Blade::directive('route', function ($expression) {
             return "<?php echo route($expression); ?>";
+        });
+
+        Blade::directive('galleryImage', function ($expression) {
+            return "<?php echo (app('" . Services\WebsiteGalleryService::class . "')->getByKey({$expression}))?->image_url; ?>";
+        });
+
+        Blade::directive('galleryTitle', function ($expression) {
+            return "<?php echo (app('" . Services\WebsiteGalleryService::class . "')->getByKey({$expression}))?->title; ?>";
+        });
+
+        Blade::if('galleryAvailable', function (string $key): bool {
+            return app(Services\WebsiteGalleryService::class)->getByKey($key) !== null;
         });
     }
 }

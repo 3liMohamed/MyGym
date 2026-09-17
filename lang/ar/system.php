@@ -4,6 +4,10 @@ return [
     'action' => [
         'permissions' => 'الصلاحيات',
         'save' => 'save',
+        'activate' => 'activate',
+        'deactivate' => 'deactivate',
+        'published' => 'published',
+        'unpublished' => 'unpublished',
     ],
     'field' => [
         'active' => 'نشط',
@@ -56,6 +60,29 @@ return [
         'group' => 'group',
         '{$state}' => '{$state}',
         'address' => 'address',
+        'button_label' => 'button_label',
+        'button_url' => 'button_url',
+        'description' => 'description',
+        'heading' => 'heading',
+        'heading_highlight' => 'heading_highlight',
+        'paragraph' => 'paragraph',
+        'sub_title' => 'sub_title',
+        'video_url' => 'video_url',
+        'day' => 'day',
+        'end_time' => 'end_time',
+        'highlighted' => 'highlighted',
+        'instructor' => 'instructor',
+        'start_time' => 'start_time',
+        'text' => 'text',
+        'time' => 'time',
+        'big_title' => 'big_title',
+        'items' => 'items',
+        'small_title' => 'small_title',
+        'features' => 'features',
+        'period' => 'period',
+        'price' => 'price',
+        'is_highlight' => 'is_highlight',
+        'category' => 'category',
     ],
     'user' => [
         'model' => 'مستخدم',
@@ -74,6 +101,7 @@ return [
         'model' => 'إعدادات',
         'navigation' => 'إعدادات',
         'title' => 'إعدادات',
+        'saved' => 'saved',
     ],
     'translation' => [
         'model' => 'ترجمه',
@@ -81,5 +109,54 @@ return [
     ],
     'model' => [
         '' => '',
+    ],
+    'about' => [
+        'model' => 'model',
+        'navigation' => 'navigation',
+    ],
+    'slider' => [
+        'model' => 'model',
+        'navigation' => 'navigation',
+    ],
+    'website_gallery' => [
+        'model' => 'model',
+        'navigation' => 'navigation',
+    ],
+    'gym_class' => [
+        'model' => 'model',
+        'navigation' => 'navigation',
+    ],
+    'marquee' => [
+        'model' => 'model',
+        'navigation' => 'navigation',
+    ],
+    'cta' => [
+        'model' => 'model',
+        'navigation' => 'navigation',
+    ],
+    'currency' => [
+        'egp' => 'egp',
+    ],
+    'pricing' => [
+        'max_active_body' => 'max_active_body',
+        'max_active_title' => 'max_active_title',
+        'model' => 'model',
+        'month' => 'month',
+        'navigation' => 'navigation',
+        'year' => 'year',
+    ],
+    'marketing' => [
+        'model' => 'model',
+        'navigation' => 'navigation',
+    ],
+    'choose' => [
+        'model' => 'model',
+        'navigation' => 'navigation',
+    ],
+    'post' => [
+        'max_publish_body' => 'max_publish_body',
+        'max_publish_title' => 'max_publish_title',
+        'model' => 'model',
+        'navigation' => 'navigation',
     ],
 ];

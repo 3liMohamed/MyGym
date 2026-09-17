@@ -114,9 +114,9 @@
                                      @foreach ($page->sections ?? [] as $section)
                                          @continue(!($section['is_visible'] ?? true))
 
-                                         <li class="{{ $loop->first ? 'current' : '' }}">
+                                         <li @class(['current' => $loop->first])">
                                              <a href="#{{ $section['name'] }}">
-                                                 @t("sections.section.{$section['name']}")
+                                                 @t('sections', 'nav.' . $section['name'])
                                              </a>
                                          </li>
                                      @endforeach

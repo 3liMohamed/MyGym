@@ -4,7 +4,7 @@ namespace App\Filament\Resources\Sliders\Pages;
 
 use App\Filament\Resources\Sliders\SliderResource;
 use Filament\Resources\Pages\ManageRecords;
-use LaraZeus\SpatieTranslatable\Resources\Concerns\Translatable;
+use LaraZeus\SpatieTranslatable\Resources\Pages\ManageRecords\Concerns\Translatable;
 
 class ManageSliders extends ManageRecords
 {

@@ -7,7 +7,7 @@
                     <!-- Slide -->
                     <div class="swiper-slide">
                         <div class="slider-two_image-layer"
-                            style="background-image:url('{{ $slide->image_url) }}'"></div>
+                            style="background-image:url('{{ $slide->image_url }}')"></div>
                         <div class="slider-two_pattern"
                             style="background-image:url('@asset('assets/images/style/slider-two_pattern.png')'">
                         </div>

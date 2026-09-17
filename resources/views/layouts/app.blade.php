@@ -59,6 +59,10 @@
     <link href="@asset('assets/css/meanmenu.min.css')" rel="stylesheet">
     <link href="@asset('assets/css/responsive.css')" rel="stylesheet">
 
+    @if ($getDir === 'ar')
+        <link href="assets/css/rtl.css" rel="stylesheet">
+    @endif
+
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -77,7 +81,7 @@
 
         {{-- @include('layouts.loader') --}}
 
-        @include('layouts.header')
+        <x-layouts.header />
 
         {{ $slot }}
 

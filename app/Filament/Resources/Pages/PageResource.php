@@ -34,7 +34,7 @@ class PageResource extends Resource
 
     protected static ?string $model = Page::class;
 
-    // protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -66,7 +66,7 @@ class PageResource extends Resource
                                 ->default('og/default.webp')
                                 ->disk('images')
                                 ->directory('og')
-                                ->maxSize(1024)
+                                ->maxSize(2048)
                                 ->columnSpanFull()
                                 ->label(__('system.field.image')),
                             TextInput::make('name')

@@ -2,18 +2,23 @@
 
 namespace App\View\Components\Sections;
 
+use App\Services\PostService;
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
 
-class About extends Component
+class Post extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $section)
+
+    public Collection $posts;
+
+    public function __construct(PostService $postService, string $section)
     {
-        //
+        $this->posts = $postService->getLatest();
     }
 
     /**
@@ -21,6 +26,6 @@ class About extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('sections.about');
+        return view('sections.post');
     }
 }

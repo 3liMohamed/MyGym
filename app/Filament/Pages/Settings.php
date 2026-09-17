@@ -4,6 +4,7 @@ namespace App\Filament\Pages;
 
 use App\Models\Setting;
 use App\Services\SettingService;
+use BackedEnum;
 use Filament\Enums\ThemeMode;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -14,6 +15,7 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Section;
 use Filament\Support\Colors\Color;
+use Filament\Support\Icons\Heroicon;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,6 +24,8 @@ class Settings extends Page
     use InteractsWithForms, AuthorizesRequests;
 
     protected string $view = 'filament.pages.settings';
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
 
 
     public static function getNavigationLabel(): string
@@ -97,7 +101,7 @@ class Settings extends Page
                             ->imageEditor()
                             ->disk('images')
                             ->directory('settings')
-                            ->maxSize(1024)
+                            ->maxSize(2048)
                             ->columnSpan(4)
                             ->label(__('system.field.favicon')),
 
@@ -107,7 +111,7 @@ class Settings extends Page
                             ->imageEditor()
                             ->disk('images')
                             ->directory('settings')
-                            ->maxSize(1024)
+                            ->maxSize(2048)
                             ->columnSpan(4)
                             ->label(__('system.field.logo_light')),
 
@@ -117,7 +121,7 @@ class Settings extends Page
                             ->imageEditor()
                             ->disk('images')
                             ->directory('settings')
-                            ->maxSize(1024)
+                            ->maxSize(2048)
                             ->columnSpan(4)
                             ->label(__('system.field.logo_dark')),
 
