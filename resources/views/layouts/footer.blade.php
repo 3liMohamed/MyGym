@@ -73,7 +73,7 @@
 
         <div class="footer-bottom">
             <!-- Copyright -->
-            <div class="main-footer_copyright">2026 &copy; All rights reserved. Designed & Developed by Ali ElDeeb</div>
+            <div class="main-footer_copyright">2026 &copy; All rights reserved. Designed & Developed by Ali Mohamed</div>
         </div>
 
     </div>

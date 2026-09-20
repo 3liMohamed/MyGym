@@ -48,6 +48,9 @@
 
     <meta name="twitter:image" content="{{ $image }}">
 
+    <meta name="author" content="Ali Mohamed">
+    <meta name="copyright" content="2026 &copy; All rights reserved. Designed & Developed by Ali Mohamed">
+
     {{-- Favicon --}}
     <link rel="shortcut icon" href="@settingAsset('logo:favicon', 'default.png')" type="image/png">
 
